@@ -1,0 +1,45 @@
+SITE — ADÃO ROSA MONTEIRO
+
+ESTRUTURA DA PASTA
+  index.html        → página de vendas (principal)
+  galeria.html      → Galeria & Shows (abre em nova aba)
+  musical.html      → Musical Sebastiana (abre em nova aba)
+  styles.css        → visual das duas páginas
+  script.js         → WhatsApp, formulário, players de vídeo e animações
+  galeria.js        → lista de vídeos do YouTube e de fotos da galeria
+  musical.js        → lista dos 20 vídeos do canal Musical Sebastiana (títulos editáveis)
+  assets/           → vídeos, capas e fotos principais
+  assets/galeria/   → fotos da galeria (versão grande + "-thumb" reduzida)
+
+COMO ABRIR NO VS CODE
+  1. Arquivo > Abrir Pasta… e selecione a pasta "adao-rosa-monteiro".
+  2. Clique com o botão direito em index.html > "Open with Live Server".
+     (Os vídeos do YouTube precisam de internet para carregar.)
+
+ADICIONAR OU TROCAR VÍDEOS DO YOUTUBE
+  Em galeria.js, na lista VIDEOS, cada linha é um vídeo:
+    { id: 'uRHbNIfFcBw', titulo: '' },
+  O "id" é o código que vem depois de youtu.be/ no link.
+  Se quiser, escreva o nome da música em "titulo" — sem título aparece "Apresentação 01, 02…".
+
+ADICIONAR FOTOS
+  1. Coloque a foto em assets/galeria/ com dois arquivos: nome.jpg e nome-thumb.jpg
+  2. Em galeria.js, na lista FOTOS, adicione:  { f: 'nome', cat: 'piano', legenda: 'Texto' },
+     (cat pode ser: piano, retratos ou bastidores)
+
+MUSICAL SEBASTIANA — LINKS DO CANAL E DO VÍDEO
+  No topo de script.js:
+    canal:   'https://www.youtube.com/@...'   (link do canal)
+    videoId: 'XXXXXXXXXXX'                    (código do vídeo de lançamento)
+  Já configurado com o canal @musicalsebastiana e o primeiro vídeo em destaque.
+  Para dar nome aos vídeos da grade, preencha "titulo" em musical.js.
+
+AGENDA
+  Em index.html, seção "Próximas apresentações". Cada apresentação some sozinha
+  do site depois da data (atributo data-end).
+
+CONTATO / WHATSAPP
+  Em script.js:  var WHATS = '5511960542083';
+
+PUBLICAR
+  Envie a pasta inteira para o Netlify (arrastar e soltar) ou outra hospedagem estática.
