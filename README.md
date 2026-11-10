@@ -16,7 +16,7 @@ Site do pianista, compositor e intérprete **Adão Rosa Monteiro**.
 
 ## Contato
 - WhatsApp da produção: (11) 96054-2083
-- Instagram: [@adaorosamonteiro](https://www.instagram.com/adaorosamonteiro/)
+- Instagram: [@adaomonteirooficial](https://www.instagram.com/adaomonteirooficial/)
 - Comunidade Quilombola São Sebastião da Boassara: [@quilombosaosebastiao](https://www.instagram.com/quilombosaosebastiao/)
 - YouTube: [Musical Sebastiana](https://www.youtube.com/@musicalsebastiana)
 
