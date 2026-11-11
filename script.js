@@ -134,3 +134,16 @@ var MUSICAL = {
     if (yt) { yt.href = 'https://www.youtube.com/watch?v=' + id; yt.hidden = false; yt.style.display = ''; }
   }
 })();
+
+// ===== Vídeo Moacyr Franco (YouTube Shorts) =====
+(function () {
+  var box = document.getElementById('mo-player');
+  if (!box) return;
+  var btn = box.querySelector('button');
+  var img = box.querySelector('img');
+  if (img) img.addEventListener('error', function () { img.src = 'assets/galeria/terno-ao-piano.jpg'; });
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('video').forEach(function (v) { v.pause(); });
+    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/8lazktsD81E?autoplay=1&rel=0&playsinline=1" title="Moacyr Franco para Adão Rosa Monteiro" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  });
+})();

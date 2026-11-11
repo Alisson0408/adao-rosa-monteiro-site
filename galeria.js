@@ -40,7 +40,12 @@
     { f: 'maos-sepia',            cat: 'piano',      legenda: 'Intimidade ao piano' },
     { f: 'reflexo-piano',         cat: 'piano',      legenda: 'Reflexo no piano de cauda' },
     { f: 'terno-ao-piano',        cat: 'piano',      legenda: 'Ao piano' },
-    { f: 'encontros',             cat: 'bastidores', legenda: 'Encontros pelo caminho' }
+    { f: 'encontros',             cat: 'bastidores', legenda: 'Encontros pelo caminho' },
+    { f: 'tv-convidado-especial', cat: 'bastidores', legenda: 'Bastidores do Geral do Povo · RedeTV!' },
+    { f: 'sergio-reis',           cat: 'bastidores', legenda: 'Com Sérgio Reis' },
+    { f: 'encontro-camarim',      cat: 'bastidores', legenda: 'Encontro nos bastidores' },
+    { f: 'beira-do-rio-1',        cat: 'retratos',   legenda: 'Fora do palco' },
+    { f: 'beira-do-rio-2',        cat: 'retratos',   legenda: 'Fora do palco' }
   ];
 
   var pad = function (n) { return (n < 10 ? '0' : '') + n; };
