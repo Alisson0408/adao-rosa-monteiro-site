@@ -23,7 +23,8 @@ var MUSICAL = {
     compositores: base + 'e tenho interesse no formato "Compositores Pretos Brasileiros". Podem me passar disponibilidade e valores?',
     autoral: base + 'e tenho interesse no formato "Recital de Piano Autoral". Podem me passar disponibilidade e valores?',
     jazz: base + 'e tenho interesse no formato "Piano & Jazz". Podem me passar disponibilidade e valores?',
-    duo: base + 'e tenho interesse no formato "Duo Baru". Podem me passar disponibilidade e valores?'
+    duo: base + 'e tenho interesse no formato "Duo Baru". Podem me passar disponibilidade e valores?',
+    rider: base + 'e vi o rider técnico. Tenho uma dúvida sobre a estrutura técnica do meu evento.'
   };
   function wa(text) { return 'https://wa.me/' + WHATS + '?text=' + encodeURIComponent(text); }
 
