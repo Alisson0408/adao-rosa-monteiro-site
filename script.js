@@ -18,13 +18,13 @@ var MUSICAL = {
   var msgs = {
     geral: base + 'e gostaria de consultar disponibilidade de agenda e valores para uma apresentação.',
     galeria: base + '(vi a galeria e os shows) e gostaria de consultar disponibilidade de agenda e valores.',
-    vozpiano: base + '(vi o vídeo de piano e voz) e tenho interesse nesse formato para o meu evento. Podem me passar disponibilidade e valores?',
+    vozpiano: base + '(vi o vídeo de piano e voz) e tenho interesse nesse formato para o meu encontro. Podem me passar disponibilidade e valores?',
     musical: base + 'e tenho interesse no Musical Sebastiana. Podem me passar informações sobre apresentações e valores?',
     compositores: base + 'e tenho interesse no formato "Compositores Pretos Brasileiros". Podem me passar disponibilidade e valores?',
     autoral: base + 'e tenho interesse no formato "Recital de Piano Autoral". Podem me passar disponibilidade e valores?',
     jazz: base + 'e tenho interesse no formato "Piano & Jazz". Podem me passar disponibilidade e valores?',
     duo: base + 'e tenho interesse no formato "Duo Baru". Podem me passar disponibilidade e valores?',
-    rider: base + 'e vi o rider técnico. Tenho uma dúvida sobre a estrutura técnica do meu evento.'
+    rider: base + 'e vi o rider técnico. Tenho uma dúvida sobre a estrutura técnica do meu encontro.'
   };
   function wa(text) { return 'https://wa.me/' + WHATS + '?text=' + encodeURIComponent(text); }
 
@@ -45,7 +45,7 @@ var MUSICAL = {
       if (d) { var p = d.split('-'); d = p[2] + '/' + p[1] + '/' + p[0]; }
       var t = 'Olá! ' + (v['f-nome'] ? 'Meu nome é ' + v['f-nome'] + '. ' : '') +
         'Conheci o trabalho de Adão Rosa Monteiro pelo site e gostaria de uma proposta de apresentação.\n\n' +
-        '• Tipo de evento: ' + (v['f-tipo'] || 'a definir') + '\n' +
+        '• Tipo de encontro: ' + (v['f-tipo'] || 'a definir') + '\n' +
         '• Formato: ' + (v['f-formato'] || 'quero sugestão') + '\n' +
         '• Cidade: ' + (v['f-cidade'] || 'a definir') + '\n' +
         '• Data prevista: ' + (d || 'a definir');
