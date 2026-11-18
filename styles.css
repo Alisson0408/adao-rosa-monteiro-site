@@ -772,3 +772,19 @@ body.locked{overflow:hidden}
 @media(max-width:980px){.odair-grid{grid-template-columns:1fr;gap:44px}.odair-media{order:-1}}
 @media(max-width:620px){.od-facts{grid-template-columns:1fr}.od-facts div:nth-child(odd){border-right:0}.od-facts div:nth-child(even){padding-left:0}.od-poster-txt{left:16px;right:16px;bottom:14px}}
 @media(max-width:620px){.od-poster .play-circle{width:54px;height:54px;transform:translateY(-22px);box-shadow:0 0 0 7px #c9a66b30}.od-poster .play-circle svg{width:20px;height:20px}.od-poster-txt{font-size:16px}}
+/* Logo oficial */
+.brand-logo{display:block;line-height:0}
+.brand-logo img{width:240px;height:auto;display:block}
+@media(max-width:620px){.brand-logo img{width:200px}}
+/* Créditos de estúdio */
+.studio-credits{margin-top:34px;display:flex;align-items:center;justify-content:space-between;gap:24px 40px;flex-wrap:wrap;padding:24px 28px;border:1px solid var(--line);background:linear-gradient(110deg,#1a1610,#100e0b)}
+.sc-label{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.studio-credits p{margin:0;color:#c3bbaf;font-size:15px;max-width:640px}
+.studio-credits p b{color:var(--cream);font-weight:600}
+.sc-links{display:flex;gap:12px;flex-wrap:wrap}
+.sc-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid #c9a66b55;color:var(--cream);font-size:13px;font-weight:600;transition:.3s}
+.sc-links a svg{color:var(--gold)}
+.sc-links a:hover{border-color:var(--gold);background:#c9a66b14}
+.brand-logo{flex-shrink:0;margin-right:32px}
+.brand-logo img{width:clamp(170px,13.5vw,240px)}
+@media(max-width:620px){.brand-logo{margin-right:0}.brand-logo img{width:200px}}
