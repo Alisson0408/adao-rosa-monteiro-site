@@ -738,3 +738,7 @@ body.locked{overflow:hidden}
 @media(max-width:980px){.ev-media{grid-column:1 / -1;grid-template-columns:repeat(2,minmax(0,300px))}.ev-media .ev-poster{max-width:none}}
 @media(max-width:620px){.ev-media{grid-template-columns:1fr}}
 @media(min-width:1200px){.event-feature.ev-duo{grid-template-columns:130px 1fr 500px}.ev-duo .ev-media{grid-template-columns:1fr 1fr;align-items:start}}
+
+.live-more{margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:none;border:0;border-bottom:1px solid #c9a66b66;padding:0 0 3px;color:var(--gold);font:600 13px/1.4 var(--sans);letter-spacing:.02em;cursor:pointer}
+.live-more svg{color:var(--gold)}
+.live-more:hover{color:var(--gold2)}

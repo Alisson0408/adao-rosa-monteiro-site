@@ -6,6 +6,7 @@
   //  O título é opcional.
   // =========================================================
   var VIDEOS = [
+    { id: 'aqeUi9PAaUM', titulo: 'Emily Cousins & Adão Monteiro · Great Is Thy Faithfulness' },
     { id: 'O_LvipOV1Ck', titulo: '' },
     { id: 'Uq5MsLC156Q', titulo: '' },
     { id: 'xXKb8d7yeO4', titulo: '' },
@@ -98,6 +99,10 @@
   if (vm) {
     vm.addEventListener('click', function (e) { if (e.target === vm || e.target.closest('[data-close]')) closeVideo(); });
   }
+
+  document.querySelectorAll('[data-yt]').forEach(function (b) {
+    b.addEventListener('click', function () { openVideo(b.dataset.yt, b.dataset.nome); });
+  });
 
   // ---------- Fotos (masonry + filtros) ----------
   var mas = document.getElementById('masonry');
