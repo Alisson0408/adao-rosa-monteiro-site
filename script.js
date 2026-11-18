@@ -148,3 +148,14 @@ var MUSICAL = {
     box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/8lazktsD81E?autoplay=1&rel=0&playsinline=1" title="Moacyr Franco para Adão Rosa Monteiro" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
   });
 })();
+
+// Vídeo do YouTube que só carrega ao clicar (destaque Odair José)
+document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
+  var btn = box.querySelector('button');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('video').forEach(function (v) { v.pause(); });
+    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + box.dataset.ytfacade +
+      '?autoplay=1&rel=0&modestbranding=1" title="' + box.dataset.nome + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  });
+});

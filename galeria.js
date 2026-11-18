@@ -6,8 +6,8 @@
   //  O título é opcional.
   // =========================================================
   var VIDEOS = [
+    { id: 'O_LvipOV1Ck', titulo: 'Odair José ao vivo no Theatro Municipal · piano: Adão Rosa Monteiro' },
     { id: 'aqeUi9PAaUM', titulo: 'Emily Cousins & Adão Monteiro · Great Is Thy Faithfulness' },
-    { id: 'O_LvipOV1Ck', titulo: '' },
     { id: 'Uq5MsLC156Q', titulo: '' },
     { id: 'xXKb8d7yeO4', titulo: '' },
     { id: 'Kbf0-ib_Saw', titulo: '' },
