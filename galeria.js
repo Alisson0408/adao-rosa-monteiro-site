@@ -30,6 +30,8 @@
   //  cat: piano | retratos | bastidores
   // =========================================================
   var FOTOS = [
+    { f: 'palco-teclados',        cat: 'piano',      legenda: 'No palco, entre o piano de cauda e os teclados' },
+    { f: 'escaleta',              cat: 'retratos',   legenda: 'Com a escaleta, na rua' },
     { f: 'sorriso-ao-piano',      cat: 'piano',      legenda: 'Ao piano, voz e emoção' },
     { f: 'retrato-oficial',       cat: 'retratos',   legenda: 'Retrato' },
     { f: 'piano-branco',          cat: 'piano',      legenda: 'Piano branco' },
