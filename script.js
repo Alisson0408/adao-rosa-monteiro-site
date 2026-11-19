@@ -95,16 +95,73 @@ var MUSICAL = {
   if (ano) ano.textContent = new Date().getFullYear();
 })();
 
-// ===== Agenda: esconde automaticamente apresentações que já passaram =====
+// ===== Agenda automática: o que já passou vira "Melhores momentos" =====
 (function () {
   var sec = document.getElementById('agenda');
   if (!sec) return;
-  var now = Date.now(), left = 0;
+  var now = Date.now(), futuros = 0, passados = [];
+  var MESES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
   sec.querySelectorAll('.event[data-end]').forEach(function (ev) {
     var end = Date.parse(ev.dataset.end);
-    if (!isNaN(end) && end < now) ev.remove(); else left++;
+    if (!isNaN(end) && end < now) passados.push({ ev: ev, end: end }); else futuros++;
   });
-  if (!left) sec.remove();
+
+  // Mural de melhores momentos (mais recente primeiro, até 6)
+  var mom = document.getElementById('momentos'), grid = document.getElementById('mom-grid');
+  passados.sort(function (x, y) { return y.end - x.end; });
+  passados.forEach(function (p, i) {
+    var ev = p.ev;
+    if (grid && i < 6) {
+      var d = new Date(p.end - 3 * 3600e3);
+      var dia = (ev.querySelector('.ev-date strong') || {}).textContent || d.getUTCDate();
+      var data = dia + ' ' + MESES[d.getUTCMonth()] + ' ' + d.getUTCFullYear();
+      var titulo = (ev.querySelector('h3') || {}).textContent || '';
+      var tag = (ev.querySelector('.ev-tag') || {}).textContent || '';
+      var local = (ev.querySelector('.ev-info b') || {}).textContent || '';
+      var img = ev.querySelector('.ev-poster img');
+      var video = ev.querySelector('.ev-video');
+      var card = document.createElement('article');
+      card.className = 'mom-card';
+      card.innerHTML =
+        '<div class="mom-media">' + (img ? '<img src="' + img.getAttribute('src') + '" alt="' + (img.getAttribute('alt') || titulo) + '" loading="lazy">' : '') + '</div>' +
+        '<div class="mom-body">' +
+          '<span class="mom-seal"><span class="mom-dot"></span>Realizado · ' + data + '</span>' +
+          '<h3></h3><p class="mom-tag"></p><p class="mom-local"></p>' +
+        '</div>';
+      card.querySelector('h3').textContent = titulo;
+      card.querySelector('.mom-tag').textContent = tag;
+      card.querySelector('.mom-local').textContent = local;
+      if (video) {
+        var btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'mom-play';
+        btn.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6 4l14 8-14 8z"/></svg> Assistir ao vídeo';
+        btn.addEventListener('click', function () {
+          var media = card.querySelector('.mom-media');
+          media.innerHTML = ''; media.classList.add('has-video'); media.appendChild(video);
+          btn.remove();
+          var v = video.querySelector('.play'); if (v) v.click();
+        });
+        card.querySelector('.mom-body').appendChild(btn);
+      }
+      grid.appendChild(card);
+    }
+    ev.remove();
+  });
+  if (mom && grid && grid.children.length) mom.hidden = false;
+
+  // Texto da agenda conforme o que ainda vai acontecer
+  var sub = document.getElementById('agenda-sub'), h2 = document.getElementById('agenda-h2');
+  if (passados.length && sub) {
+    var N = ['', 'Uma apresentação confirmada', 'Duas apresentações confirmadas', 'Três apresentações confirmadas', 'Quatro apresentações confirmadas'];
+    sub.textContent = futuros ? (N[futuros] || futuros + ' apresentações confirmadas') + '. Garanta também a data do seu encontro.' : '';
+  }
+  if (!futuros) {
+    var evs = sec.querySelector('.events'); if (evs) evs.remove();
+    var eb = sec.querySelector('.eyebrow'); if (eb) eb.textContent = 'Agenda';
+    if (h2) h2.innerHTML = 'Agenda aberta <em>para novas datas.</em>';
+    if (sub) sub.textContent = 'As próximas apresentações serão anunciadas aqui. Reserve agora a data do seu encontro.';
+    var cp = sec.querySelector('.agenda-cta p'); if (cp) cp.remove();
+  }
 })();
 
 // ===== Musical Sebastiana: links do canal e vídeo de lançamento =====

@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -114,8 +114,8 @@
     <div class="agenda-head rv">
       <div class="sec-head" style="margin-bottom:0">
         <span class="eyebrow">Próximas apresentações</span>
-        <h2>Semana da Consciência Negra <em>ao piano.</em></h2>
-        <p>Três apresentações confirmadas em novembro, em Minas Gerais e em São Paulo.</p>
+        <h2 id="agenda-h2">Semana da Consciência Negra <em>ao piano.</em></h2>
+        <p id="agenda-sub">Três apresentações confirmadas em novembro, em Minas Gerais e em São Paulo.</p>
       </div>
     </div>
     <div class="events">
@@ -190,12 +190,27 @@
   </div>
 </section>
 
+<!-- MELHORES MOMENTOS (preenchido automaticamente com as apresentações que já aconteceram) -->
+<section class="sec momentos" id="momentos" hidden>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Melhores momentos</span>
+      <h2>Por onde a música <em>já passou.</em></h2>
+      <p>Cada apresentação realizada vira memória. Veja os encontros mais recentes de Adão Rosa Monteiro.</p>
+    </div>
+    <div class="mom-grid" id="mom-grid"></div>
+    <div class="mom-cta rv">
+      <a class="btn btn-ghost" href="galeria.html">Ver galeria completa <svg><use href="#arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <!-- MUSICAL SEBASTIANA -->
 <section class="musical-feature" id="musical">
   <div class="mf-photo" role="img" aria-label="Adão Rosa Monteiro refletido no piano de cauda"></div>
   <div class="wrap mf-inner">
     <div class="mf-content rv">
-      <span class="mf-badge"><span class="dot"></span>Projeto especial · 20 vídeos</span>
+      <span class="mf-badge"><span class="dot"></span>Projeto especial · 21 vídeos</span>
       <span class="eyebrow">Um tributo familiar</span>
       <h2>Musical <em>Sebastiana</em></h2>
       <p>Um grande tributo em homenagem e memória de Dona Sebastiana Florentina Monteiro e de seu esposo, Raimundo Rosa Moreira. Idealização e coordenação de Adão Rosa Monteiro.</p>
@@ -640,6 +655,6 @@
   <a class="btn btn-wa wa-link" data-msg="geral" href="#"><span class="chip chip-wa"><svg><use href="#wa"/></svg></span> Consultar data</a>
 </div>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
