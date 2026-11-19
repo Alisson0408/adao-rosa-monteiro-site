@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body class="page-musical">
 
@@ -26,15 +26,50 @@
   <div class="wrap">
     <a class="brand" href="index.html"><b>ADÃO ROSA</b><small>MONTEIRO · PIANISTA</small></a>
     <nav class="nav">
-      <a href="#sobre">O musical</a>
-      <a href="#assista">Destaque</a>
-      <a href="#videos">Todos os vídeos</a>
-      <a href="#raizes">Raízes</a>
-      <a href="index.html">Página principal</a>
       <a class="btn btn-gold wa-link" data-msg="musical" href="#">Levar ao meu encontro <svg><use href="#arrow"/></svg></a>
+      <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false"><span class="mb-lines"><i></i><i></i><i></i></span><span class="mb-txt">Menu</span></button>
     </nav>
   </div>
 </header>
+<div class="menu" id="menu" aria-hidden="true" role="dialog" aria-label="Menu do site">
+  <div class="menu-bg" aria-hidden="true"></div>
+  <div class="wrap menu-in">
+    <div class="menu-top">
+      <a class="brand" href="index.html"><b>ADÃO ROSA</b><small>MONTEIRO · PIANISTA</small></a>
+      <button class="menu-close" type="button" aria-label="Fechar menu"><span></span><span></span></button>
+    </div>
+    <div class="menu-cols">
+      <div class="menu-col">
+        <span class="menu-k">01 · O artista</span>
+        <a href="index.html#video">Vídeo</a>
+        <a href="index.html#historia">História</a>
+        <a href="index.html#trajetoria">Trajetória</a>
+        <a href="index.html#odair">DVD Odair José</a>
+      </div>
+      <div class="menu-col">
+        <span class="menu-k">02 · Contratar</span>
+        <a href="index.html#agenda">Agenda</a>
+        <a href="index.html#formatos">Formatos</a>
+        <a href="index.html#rider">Rider técnico</a>
+        <a href="index.html#contratar">Como contratar</a>
+      </div>
+      <div class="menu-col">
+        <span class="menu-k">03 · Assistir</span>
+        <a href="galeria.html">Galeria &amp; Shows</a>
+        <a href="musical.html" aria-current="page">Musical Sebastiana</a>
+        <a href="index.html#momentos" data-desde="2026-11-21T00:00:00-03:00">Melhores momentos</a>
+      </div>
+    </div>
+    <div class="menu-foot">
+      <a class="btn btn-gold wa-link" data-msg="geral" href="#">Consultar data no WhatsApp <svg><use href="#arrow"/></svg></a>
+      <div class="menu-social">
+        <a href="https://www.instagram.com/adaomonteirooficial/" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#ig"/></svg> @adaomonteirooficial</a>
+        <span>WhatsApp (11) 96054-2083</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <main>
 <!-- HERO -->
@@ -213,6 +248,6 @@
 </div>
 
 <script src="musical.js?v=2"></script>
-<script src="script.js"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>

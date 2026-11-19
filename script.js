@@ -216,3 +216,25 @@ document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
       '?autoplay=1&rel=0&modestbranding=1" title="' + box.dataset.nome + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
   });
 });
+
+// ===== Menu em tela inteira =====
+(function () {
+  var menu = document.getElementById('menu');
+  var btn = document.querySelector('.menu-btn');
+  if (!menu || !btn) return;
+  menu.querySelectorAll('[data-desde]').forEach(function (a) {
+    if (Date.now() < Date.parse(a.dataset.desde)) a.remove();
+  });
+  function abrir() {
+    menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true'); document.documentElement.classList.add('menu-aberto');
+  }
+  function fechar() {
+    menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false'); document.documentElement.classList.remove('menu-aberto');
+  }
+  btn.addEventListener('click', abrir);
+  menu.querySelector('.menu-close').addEventListener('click', fechar);
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', fechar); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
+})();
