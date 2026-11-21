@@ -842,3 +842,18 @@ body.locked{overflow:hidden}
 html.menu-aberto{overflow:hidden}
 @media(max-width:980px){.menu-cols{grid-template-columns:1fr;gap:28px;align-content:start;padding:24px 0 36px}.menu-col{padding-top:18px}.menu-col a{font-size:27px}}
 @media(max-width:620px){.menu-btn{height:40px;padding:0 14px}.menu-top{height:66px}.menu-foot .btn{width:100%;justify-content:center}.menu-social{flex-direction:column;gap:10px}}
+
+/* Mural: apresentação com vídeos (show + bastidores) */
+.mom-card.mom-wide{grid-column:span 2;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:auto 1fr}
+.mom-wide .mom-media{grid-row:1 / span 2}
+.mom-wide .mom-body{padding-bottom:10px}
+.mom-vids{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:6px 26px 26px;align-content:start}
+.mom-vids .phone{padding:6px;border-radius:20px}
+.mom-vids .phone video{border-radius:15px}
+.mom-vids .play{inset:6px;border-radius:15px}
+.mom-vids .play-circle{width:54px;height:54px;box-shadow:0 0 0 8px #c9a66b30}
+.mom-vids .play-circle svg{width:20px;height:20px}
+.mom-v-cap{margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.4}
+.mom-v-cap b{color:var(--gold);font-weight:600}
+@media(max-width:980px){.mom-card.mom-wide{grid-column:1 / -1}}
+@media(max-width:620px){.mom-card.mom-wide{grid-template-columns:1fr}.mom-wide .mom-media{grid-row:auto}.mom-vids{padding:0 20px 22px;gap:12px}}

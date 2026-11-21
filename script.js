@@ -143,6 +143,12 @@ var MUSICAL = {
         });
         card.querySelector('.mom-body').appendChild(btn);
       }
+      var momv = ev.querySelector('.ev-momentos');
+      if (momv) {
+        var wrap = document.createElement('div'); wrap.className = 'mom-vids';
+        while (momv.firstElementChild) wrap.appendChild(momv.firstElementChild);
+        card.classList.add('mom-wide'); card.appendChild(wrap);
+      }
       grid.appendChild(card);
     }
     ev.remove();

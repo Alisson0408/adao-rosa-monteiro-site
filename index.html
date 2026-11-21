@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -163,6 +163,31 @@
           <a class="ev-link" href="https://www.instagram.com/quilombosaosebastiao/" target="_blank" rel="noopener noreferrer"><svg width="14" height="14"><use href="#ig"/></svg> Acompanhe a divulgação no Instagram do Quilombo São Sebastião ↗</a>
         </div>
         <figure class="ev-poster"><img src="assets/cartaz-vozes-ancestrais.jpg" alt="Cartaz oficial: Musical de Piano Vozes Ancestrais, com Adão Monteiro, 20 de novembro, Teatro Municipal de Patos de Minas, 18h30 às 20h" loading="lazy"></figure>
+        <!-- Vídeos dos melhores momentos: ficam ocultos na agenda e aparecem sozinhos no mural depois da data -->
+        <div class="ev-momentos" hidden>
+          <div class="mom-v">
+            <div class="phone" data-player>
+              <video playsinline preload="none" poster="assets/vozes-ancestrais-show-poster.jpg">
+                <source src="assets/vozes-ancestrais-show.mp4" type="video/mp4">
+              </video>
+              <button class="play" aria-label="Assistir ao show Vozes Ancestrais no Teatro Municipal de Patos de Minas">
+                <span class="play-inner"><span class="play-circle"><svg viewBox="0 0 24 24" fill="#16110a"><path d="M6 4l14 8-14 8z"/></svg></span><span>O show</span></span>
+              </button>
+            </div>
+            <p class="mom-v-cap"><b>No palco</b> · Teatro Municipal de Patos de Minas</p>
+          </div>
+          <div class="mom-v">
+            <div class="phone" data-player>
+              <video playsinline preload="none" poster="assets/vozes-ancestrais-ensaio-poster.jpg">
+                <source src="assets/vozes-ancestrais-ensaio.mp4" type="video/mp4">
+              </video>
+              <button class="play" aria-label="Assistir ao ensaio no Conservatório de Patos de Minas">
+                <span class="play-inner"><span class="play-circle"><svg viewBox="0 0 24 24" fill="#16110a"><path d="M6 4l14 8-14 8z"/></svg></span><span>Bastidores</span></span>
+              </button>
+            </div>
+            <p class="mom-v-cap"><b>Ensaio</b> · Conservatório de Patos de Minas</p>
+          </div>
+        </div>
       </article>
       <article class="event event-feature ev-duo rv" data-end="2026-11-21T23:59:00-03:00">
         <div class="ev-date"><strong>21</strong><span>Nov · Sáb</span></div>
@@ -687,6 +712,6 @@
   <a class="btn btn-wa wa-link" data-msg="geral" href="#"><span class="chip chip-wa"><svg><use href="#wa"/></svg></span> Consultar data</a>
 </div>
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>
