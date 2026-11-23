@@ -871,3 +871,5 @@ html.menu-aberto{overflow:hidden}
 .mf-more{position:absolute;inset:0;display:grid;place-items:center;background:#0b0a08b3;color:var(--cream);font:600 22px var(--serif);letter-spacing:.02em;transition:background .3s}
 .mf-item:hover .mf-more{background:#0b0a0899}
 @media(max-width:620px){.mf-grid{grid-template-columns:repeat(3,1fr);gap:6px}.mf-grid.is-collapsed .mf-item:nth-child(n+7){display:none}}
+.mom-fotos-h a{color:var(--cream);border-bottom:1px solid #c9a66b66;transition:color .2s}
+.mom-fotos-h a:hover{color:var(--gold)}
