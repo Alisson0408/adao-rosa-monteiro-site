@@ -304,3 +304,18 @@ document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
     if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); sx = null;
   });
 })();
+
+// ===== Reportagem do Instagram: carrega o player só quando chega perto =====
+(function () {
+  var alvo = document.querySelector('#ancestralidade .instagram-media');
+  if (!alvo) return;
+  function carregar() {
+    if (window.instgrm) { window.instgrm.Embeds.process(); return; }
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.instagram.com/embed.js';
+    document.body.appendChild(s);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); carregar(); } }, { rootMargin: '400px' });
+    io.observe(alvo);
+  } else carregar();
+})();
