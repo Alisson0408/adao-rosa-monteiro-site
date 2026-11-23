@@ -119,6 +119,8 @@ var MUSICAL = {
       var tag = (ev.querySelector('.ev-tag') || {}).textContent || '';
       var local = (ev.querySelector('.ev-info b') || {}).textContent || '';
       var img = ev.querySelector('.ev-poster img');
+      var capa = ev.querySelector('.mom-fotos[data-capa] .mf-item');
+      if (capa) { img = document.createElement('img'); img.setAttribute('src', capa.dataset.src); img.setAttribute('alt', titulo + ' — foto do show'); }
       var video = ev.querySelector('.ev-video');
       var card = document.createElement('article');
       card.className = 'mom-card';
@@ -243,4 +245,62 @@ document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
   menu.querySelector('.menu-close').addEventListener('click', fechar);
   menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', fechar); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechar(); });
+})();
+
+// ===== Fotos dos shows: mosaico + ampliação =====
+(function () {
+  var lb = document.getElementById('mf-lb');
+  if (!lb) return;
+  var img = document.getElementById('mf-lb-img'), cap = document.getElementById('mf-lb-cap'), cnt = document.getElementById('mf-lb-count');
+  var grupo = [], legenda = '', cur = 0;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function show(i) {
+    cur = (i + grupo.length) % grupo.length;
+    img.classList.remove('ready');
+    img.onload = function () { img.classList.add('ready'); };
+    img.src = grupo[cur].dataset.src;
+    img.alt = legenda + ' — foto ' + (cur + 1);
+    cap.textContent = legenda;
+    cnt.textContent = pad(cur + 1) + ' / ' + pad(grupo.length);
+  }
+  function abrir(lista, i, texto) {
+    grupo = lista; legenda = texto; show(i);
+    lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('locked');
+  }
+  function fechar() {
+    lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('locked');
+  }
+  function preparar(bloco) {
+    if (bloco.dataset.pronto) return; bloco.dataset.pronto = '1';
+    var grid = bloco.querySelector('.mf-grid');
+    var itens = [].slice.call(bloco.querySelectorAll('.mf-item'));
+    var limite = window.matchMedia('(max-width:620px)').matches ? 6 : 8;
+    if (itens.length > limite) {
+      grid.classList.add('is-collapsed');
+      var m = document.createElement('span'); m.className = 'mf-more';
+      m.textContent = '+' + (itens.length - limite + 1);
+      itens[limite - 1].appendChild(m);
+    }
+    itens.forEach(function (b, i) {
+      b.addEventListener('click', function () { abrir(itens, i, bloco.dataset.cap || ''); });
+    });
+  }
+  document.querySelectorAll('.mom-fotos').forEach(preparar);
+  lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(cur - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(cur + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.closest('[data-close]')) fechar(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') fechar();
+    if (e.key === 'ArrowRight') show(cur + 1);
+    if (e.key === 'ArrowLeft') show(cur - 1);
+  });
+  var sx = null;
+  lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (sx === null) return; var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); sx = null;
+  });
 })();
