@@ -307,7 +307,7 @@ document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
 
 // ===== Reportagem do Instagram: carrega o player só quando chega perto =====
 (function () {
-  var alvo = document.querySelector('#ancestralidade .instagram-media');
+  var alvo = document.querySelector('#ancestralidade');
   if (!alvo) return;
   function carregar() {
     if (window.instgrm) { window.instgrm.Embeds.process(); return; }
