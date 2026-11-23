@@ -906,3 +906,7 @@ html.menu-aberto{overflow:hidden}
 .boa-follow{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
 .boa-follow .btn{display:inline-flex;align-items:center;gap:10px}
 @media(max-width:860px){.boa-posts{grid-template-columns:1fr;justify-items:center}.boa-redes{margin-top:64px;padding-top:56px}}
+.boa-quote{margin:0 0 72px;padding:0 0 64px;border-bottom:1px solid var(--line);text-align:center}
+.boa-quote blockquote{margin:0 auto;max-width:900px;font:italic 400 clamp(1.7rem,3.6vw,2.9rem)/1.25 var(--serif);color:var(--cream)}
+.boa-quote figcaption{margin-top:22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.boa-quote figcaption b{color:var(--gold);font-weight:700}
