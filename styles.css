@@ -910,3 +910,55 @@ html.menu-aberto{overflow:hidden}
 .boa-quote blockquote{margin:0 auto;max-width:900px;font:italic 400 clamp(1.7rem,3.6vw,2.9rem)/1.25 var(--serif);color:var(--cream)}
 .boa-quote figcaption{margin-top:22px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .boa-quote figcaption b{color:var(--gold);font-weight:700}
+
+/* =========================================================
+   HOMENAGEM · Dona Xírica (homenagem.html) + destaque no index
+   ========================================================= */
+.hm-hero .mu-hero-photo img{object-position:40% 30%}
+.hm-fullname{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--gold2);margin:-10px 0 18px}
+.hm-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.hm-grid>*{min-width:0}
+.hm-aside{position:sticky;top:110px;display:grid;gap:22px}
+.hm-portrait{position:relative;margin:0}
+.hm-portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:60% 30%;border:1px solid #c9a66b40;box-shadow:0 40px 100px #000a}
+.hm-portrait::before,.hm-portrait::after{content:"";position:absolute;width:26px;height:26px;border-color:var(--gold);border-style:solid;z-index:2}
+.hm-portrait::before{top:-8px;left:-8px;border-width:1px 0 0 1px}
+.hm-portrait::after{bottom:-8px;right:-8px;border-width:0 1px 1px 0}
+.hm-card{padding:34px 28px}
+.hm-card .mu-credit{font-size:18px;line-height:1.35}
+.hm-local{margin:18px 0 0;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.hm-text p{color:#c3bbaf;font-size:17px;line-height:1.75;margin:0 0 20px;max-width:640px}
+.hm-text .hm-lead{color:var(--cream);font-size:19px}
+.hm-text .hm-lead::first-letter{float:left;font-family:var(--serif);font-size:4.4em;line-height:.85;padding:6px 12px 0 0;color:var(--gold)}
+.hm-pull{margin:44px 0;padding:8px 0 8px 30px;border-left:1px solid var(--gold);font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.3;color:var(--cream);max-width:620px}
+.hm-pull em{color:var(--gold);font-style:italic}
+.hm-text .hm-close{margin-top:40px;padding-top:30px;border-top:1px solid #c9a66b33;font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.35;color:var(--cream)}
+.hm-close em{color:var(--gold);font-style:italic}
+.hm-pillars{padding-top:90px;padding-bottom:90px}
+.hm-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hm-gallery .mf-item{position:relative;aspect-ratio:3/4;padding:0;border:1px solid var(--line);background:#000;cursor:zoom-in;overflow:hidden}
+.hm-gallery img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(.92)}
+.hm-gallery .mf-item:hover img{transform:scale(1.05);filter:saturate(1.05)}
+.hm-gallery .mf-item:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* destaque no index */
+.hm-feature{position:relative;overflow:hidden;background:radial-gradient(ellipse at 80% 20%,#c9a66b14,transparent 60%),#0d0b09;border-block:1px solid #c9a66b26}
+.hm-feature-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.hm-feature-grid>*{min-width:0}
+.hm-feature h2{font-size:clamp(2.4rem,4.8vw,4.2rem);line-height:1.05;margin:18px 0 8px}
+.hm-feature p{color:#c3bbaf;font-size:17px;max-width:560px}
+.hm-feature blockquote{margin:26px 0 32px;padding-left:22px;border-left:1px solid var(--gold);font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2vw,1.5rem);color:var(--cream);max-width:540px}
+@media(max-width:980px){
+  .hm-gallery{grid-template-columns:1fr 1fr}
+  .hm-grid,.hm-feature-grid{grid-template-columns:1fr;gap:50px}
+  .hm-aside{position:static;grid-template-columns:1fr 1fr;align-items:stretch}
+  .hm-portrait img{height:100%}
+}
+@media(max-width:620px){
+  .hm-aside{grid-template-columns:1fr}
+  .hm-portrait img{aspect-ratio:4/5;height:auto}
+  .hm-text p{font-size:16.5px}
+  .hm-text .hm-lead{font-size:18px}
+  .hm-pull{padding-left:20px;margin:34px 0}
+  .hm-gallery{gap:10px}
+  .hm-feature .btn{width:100%}
+}
