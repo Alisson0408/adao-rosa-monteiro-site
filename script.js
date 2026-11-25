@@ -252,7 +252,8 @@ document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
   var lb = document.getElementById('mf-lb');
   if (!lb) return;
   var img = document.getElementById('mf-lb-img'), cap = document.getElementById('mf-lb-cap'), cnt = document.getElementById('mf-lb-count');
-  var grupo = [], legenda = '', cur = 0;
+  var grupo = [], legenda = '', cur = 0, credito = {};
+  var cred = document.getElementById('mf-lb-cred');
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function show(i) {
     cur = (i + grupo.length) % grupo.length;
@@ -261,10 +262,22 @@ document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
     img.src = grupo[cur].dataset.src;
     img.alt = legenda + ' — foto ' + (cur + 1);
     cap.textContent = legenda;
+    if (cred) {
+      cred.textContent = '';
+      if (credito.nome) {
+        cred.appendChild(document.createTextNode('Foto: '));
+        var a = document.createElement('a');
+        a.href = 'https://www.instagram.com/' + credito.ig + '/';
+        a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = credito.nome + ' · @' + credito.ig;
+        a.addEventListener('click', function (e) { e.stopPropagation(); });
+        cred.appendChild(a);
+      }
+    }
     cnt.textContent = pad(cur + 1) + ' / ' + pad(grupo.length);
   }
-  function abrir(lista, i, texto) {
-    grupo = lista; legenda = texto; show(i);
+  function abrir(lista, i, texto, cr) {
+    grupo = lista; legenda = texto; credito = cr || {}; show(i);
     lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
     document.body.classList.add('locked');
   }
@@ -284,7 +297,7 @@ document.querySelectorAll('[data-ytfacade]').forEach(function (box) {
       itens[limite - 1].appendChild(m);
     }
     itens.forEach(function (b, i) {
-      b.addEventListener('click', function () { abrir(itens, i, bloco.dataset.cap || ''); });
+      b.addEventListener('click', function () { abrir(itens, i, bloco.dataset.cap || '', { nome: bloco.dataset.credito, ig: bloco.dataset.creditoIg }); });
     });
   }
   document.querySelectorAll('.mom-fotos').forEach(preparar);
